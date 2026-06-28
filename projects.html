@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projects — Ethan Cearlock" />
+  <title>Projects · Ethan Cearlock</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+</head>
+
+<body>
+
+  <aside class="sidebar">
+    <a href="index.html" class="sidebar-logo">ethan cearlock</a>
+    <p class="sidebar-tagline">// cs · security · systems</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="projects.html" class="active">projects</a></li>
+        <li><a href="writing.html">writing</a></li>
+        <li><a href="games.html">games</a></li>
+        <li><a href="about.html">about</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin</a>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <h1>projects</h1>
+    <p class="muted">a running archive of things built, broken, and documented.</p>
+
+    <!-- ===================== PROJECT CARDS =====================
+      Each .project-card is a clickable box with a background image.
+      The .card-overlay is a semi-transparent layer that sits on top
+      of the image — this is what makes text readable over a photo.
+      The whole card is wrapped in an <a> tag so clicking anywhere
+      on it navigates to the project page or external link.
+
+      To add your own image: replace the background-image inline style
+      with the path to your image file, e.g.:
+        style="background-image: url('assets/images/garden.jpg')"
+      If using a GitHub raw image URL, paste that as the url() value.
+
+      target="_blank" opens in a new tab.
+      rel="noopener noreferrer" is the security habit for external links.
+      For internal links (your own pages), omit target and rel entirely.
+    -->
+    <section class="cards-grid">
+
+      <!-- CARD: This Website — links to GitHub repo -->
+      <a class="project-card"
+         href="https://github.com/yourusername/ethancearlock.dev"
+         target="_blank"
+         rel="noopener noreferrer"
+         style="background-image: url('assets/images/website-placeholder.jpg')">
+        <div class="card-overlay">
+          <span class="card-tag">web · security</span>
+          <h3 class="card-title">this website</h3>
+        </div>
+      </a>
+
+      <!-- CARD: Automated Garden — links to internal dedicated page -->
+      <a class="project-card"
+         href="projects/automated-garden.html"
+         style="background-image: url('assets/images/garden-placeholder.jpg')">
+        <div class="card-overlay">
+          <span class="card-tag">ics · hardware</span>
+          <h3 class="card-title">automated garden</h3>
+        </div>
+      </a>
+
+      <!-- CARD: AI Emoji Filter — links to GitHub repo -->
+      <a class="project-card"
+         href="https://github.com/yourusername/emoji-filter"
+         target="_blank"
+         rel="noopener noreferrer"
+         style="background-image: url('assets/images/emoji-placeholder.jpg')">
+        <div class="card-overlay">
+          <span class="card-tag">ml · cv</span>
+          <h3 class="card-title">AI emoji filter</h3>
+        </div>
+      </a>
+
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ===================== HONORABLE MENTIONS =====================
+      .mention-list uses the same project-list style from style.css
+      for visual consistency, but these are just text — no cards.
+    -->
+    <h2>honorable mentions</h2>
+    <p class="muted">things worth noting that don't warrant a full page.</p>
+
+    <ul class="mention-list">
+      <li>
+        <span class="mention-title">placeholder project title</span>
+        <span class="mention-desc">— brief description of what it was and why it mattered.</span>
+      </li>
+      <li>
+        <span class="mention-title">placeholder project title</span>
+        <span class="mention-desc">— brief description.</span>
+      </li>
+    </ul>
+
+    <hr class="section-divider" />
+
+    <!-- ===================== SIDE QUESTS ===================== -->
+    <h2>side quests</h2>
+    <p class="muted">rabbit holes, experiments, and things learned the hard way.</p>
+
+    <ul class="mention-list">
+      <li>
+        <span class="mention-title">minecraft server on the cloud</span>
+        <span class="mention-desc">— spun up a cloud VM, fought Microsoft, debugged a port issue that turned out to be IPv4 vs IPv6. It works.</span>
+      </li>
+      <li>
+        <span class="mention-title">placeholder side quest</span>
+        <span class="mention-desc">— description.</span>
+      </li>
+    </ul>
+
+  </main>
+
+</body>
+</html>
