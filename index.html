@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!--
+    viewport meta tag: tells mobile browsers not to zoom out and show
+    a desktop-sized page. width=device-width makes the layout width
+    match the screen. initial-scale=1 prevents auto-zoom.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+    These meta tags are what Google and link-preview cards (Slack,
+    Discord, iMessage) read. Fill them in with real copy eventually.
+  -->
+  <meta name="description" content="Ethan Cearlock — CS & Math at Columbia. Security, systems, and applied ML." />
+
+  <title>Ethan Cearlock</title>
+
+  <!-- Single link to your shared stylesheet. Every page will have this. -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <!--
+    This whole block will be identical on every page.
+    Later you may want to extract it with JS or a build tool,
+    but copy-paste is fine while the site is small.
+    The only thing that changes per page: which <a> gets class="active"
+  -->
+  <aside class="sidebar">
+    <a href="index.html" class="sidebar-logo">ethan cearlock</a>
+    <p class="sidebar-tagline">// cs · security · systems</p>
+
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">home</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="writing.html">writing</a></li>
+        <li><a href="games.html">games</a></li>
+        <li><a href="about.html">about</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener">github</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin</a>
+    </div>
+  </aside>
+  <!--
+    SECURITY NOTE — rel="noopener":
+    Any link with target="_blank" (opens in new tab) should include
+    rel="noopener noreferrer". Without it, the new tab can access
+    your page via window.opener, which is a minor but real attack surface.
+    This is already included above. Keep this habit on every external link.
+  -->
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="main">
+
+    <!-- Status indicator — the pulsing dot signals "active/online" -->
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      <span>currently: credit union IT internship · building security portfolio</span>
+    </div>
+
+    <!-- 
+      h1 is your page's primary heading. There should only be one per page.
+      Screen readers and search engines treat it as the page title.
+    -->
+    <h1>hey, I'm Ethan.</h1>
+
+    <p>
+      Rising senior at Columbia studying Computer Science and Mathematics,
+      with a Philosophy minor. I'm interested in security, systems, and
+      the intersection of AI with both. This site documents the work —
+      projects, writing, and whatever else accumulates over time.
+    </p>
+
+    <p>
+      Currently interning in IT at a credit union, working on AI chatbot
+      integration and legacy system migration. My longer-term focus is
+      ICS/OT security and applied ML safety.
+    </p>
+
+    <hr class="section-divider" />
+
+    <h2>selected projects</h2>
+    <!--
+      ul = unordered list, li = list item.
+      class="project-list" hooks into the styles in style.css.
+      These will eventually link to dedicated project pages.
+    -->
+    <ul class="project-list">
+      <li>LLM jailbreak resistance — adversarial prompt evaluation framework</li>
+      <li>Garden SCADA — ICS monitoring with Ignition + ESP32</li>
+      <li>AI chatbot frontend — deployed at credit union internship</li>
+    </ul>
+
+    <a href="projects.html">all projects →</a>
+
+    <hr class="section-divider" />
+
+    <h2>recent writing</h2>
+    <p class="muted">placeholder — first chapter incoming.</p>
+    <a href="writing.html">writing page →</a>
+
+    <hr class="section-divider" />
+
+    <!--
+      The <footer> element is semantic HTML — it tells browsers and
+      screen readers this is footer content, not main content.
+      Doesn't change appearance by itself, just meaning.
+    -->
+    <footer>
+      <p class="muted">
+        ethan cearlock · columbia university · 
+        <code>ethan@ethancearlock.dev</code>
+      </p>
+    </footer>
+
+  </main>
+
+</body>
+</html>

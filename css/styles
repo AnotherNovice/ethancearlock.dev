@@ -1,0 +1,315 @@
+/* ============================================================
+   style.css — ethancearlock.dev global stylesheet
+   ============================================================ */
+
+/* --- Google Fonts import --- */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+/* --- CSS custom properties (variables) ---
+   Change a value here and it updates everywhere on the site.
+   This is how you'll tweak colors, fonts, spacing globally. */
+:root {
+  --bg:          #0a0a0a;       /* near-black background */
+  --bg-surface:  #111111;       /* slightly lighter for cards/sidebar */
+  --bg-hover:    #1a1a1a;       /* hover state for nav items */
+  --border:      #222222;       /* subtle borders */
+
+  --text:        #e0e0e0;       /* primary body text — off-white, easier on eyes than pure white */
+  --text-muted:  #666666;       /* secondary/meta text */
+  --accent:      #00d4ff;       /* cyan — headings, links, highlights */
+  --accent-dim:  #008fab;       /* dimmer cyan for hover states */
+
+  --font-mono:   'Fira Code', monospace;   /* headings, code, nav, anything "technical" */
+  --font-body:   'Inter', sans-serif;      /* body text, descriptions, prose */
+
+  --sidebar-w:   220px;         /* sidebar width — change this one value to resize it */
+  --transition:  150ms ease;
+}
+
+/* --- Reset & base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;                /* sidebar + main side by side */
+}
+
+/* --- Sidebar navigation --- */
+/* The sidebar is position:sticky so it stays visible as you scroll */
+.sidebar {
+  width: var(--sidebar-w);
+  min-height: 100vh;
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;      /* prevents sidebar from stretching full page height */
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-logo {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+/* The blinking cursor after your name — purely CSS, no JS */
+.sidebar-logo::after {
+  content: '_';
+  animation: blink 1.2s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.sidebar-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* nav element wraps the ul list of links */
+.sidebar nav {
+  flex: 1;
+}
+
+.sidebar nav ul {
+  list-style: none;             /* removes bullet points */
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebar nav a {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  border-left: 2px solid transparent;
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+  letter-spacing: 0.03em;
+}
+
+/* Prefix each nav link with > in CSS — no need to type it in HTML */
+.sidebar nav a::before {
+  content: '> ';
+  color: var(--border);
+  transition: color var(--transition);
+}
+
+.sidebar nav a:hover {
+  color: var(--text);
+  background: var(--bg-hover);
+  border-left-color: var(--accent);
+}
+
+.sidebar nav a:hover::before {
+  color: var(--accent);
+}
+
+/* .active class marks the current page — you'll add this manually per page */
+.sidebar nav a.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+
+.sidebar nav a.active::before {
+  color: var(--accent);
+}
+
+/* Social/footer links at bottom of sidebar */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 1rem;
+}
+
+.sidebar-footer a {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.sidebar-footer a:hover {
+  color: var(--accent);
+}
+
+/* --- Main content area --- */
+.main {
+  flex: 1;                      /* takes all remaining horizontal space */
+  padding: 3rem 4rem;
+  max-width: 860px;             /* keeps line length readable */
+}
+
+/* --- Typography --- */
+/* h1–h3 use Fira Code and cyan; h4+ use Inter */
+h1, h2, h3 {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+h1 { font-size: 2rem;   margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; margin-bottom: 0.75rem; margin-top: 2.5rem; }
+h3 { font-size: 1.05rem; margin-bottom: 0.5rem; margin-top: 1.5rem; }
+
+h4, h5, h6 {
+  font-family: var(--font-body);
+  color: var(--text);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--accent-dim);
+  text-decoration: underline;
+}
+
+/* Inline code spans — wrapping a word in <code> makes it look like this */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--accent);
+  background: var(--bg-surface);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+
+/* Muted/secondary text — apply class="muted" to any element */
+.muted {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* --- Section divider --- */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+/* --- Status badge — the "currently working on" indicator --- */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* --- Project list (for projects.html later) --- */
+.project-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-list li {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.project-list li:hover {
+  border-color: var(--accent);
+  background: var(--bg-surface);
+}
+
+/* --- Responsive: collapse sidebar on small screens ---
+   On mobile the sidebar becomes a top bar.
+   You won't need this for a while but it's here. */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .sidebar nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .main {
+    padding: 2rem 1.5rem;
+  }
+}
