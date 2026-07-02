@@ -1,0 +1,98 @@
+/* ============================================================
+   experience.css — timeline layout for experience.html
+   ============================================================ */
+
+.breadcrumb-plain {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb-plain a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.breadcrumb-plain a:hover {
+  color: var(--accent);
+}
+
+/* --- Timeline container ---
+   The vertical line is drawn using ::before on .timeline.
+   It's a 1px wide colored border positioned on the left.
+   Each entry's year column sits to the left of this line.
+*/
+.timeline {
+  position: relative;
+  margin: 1.5rem 0;
+  padding-left: 0;
+}
+
+/* The vertical connecting line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 72px;                   /* lines up with right edge of year column */
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: var(--border);
+}
+
+/* --- Individual timeline entry --- */
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 72px 1fr;   /* fixed year width, rest for content */
+  gap: 0 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* The dot on the timeline line */
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: 68px;                   /* centered on the 1px line */
+  top: 0.45rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 1px solid var(--bg);
+}
+
+/* Year label */
+.timeline-year {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  padding-top: 0.25rem;
+  text-align: right;
+  line-height: 1.4;
+}
+
+/* Content column */
+.timeline-body {
+  padding-top: 0.1rem;
+}
+
+.timeline-title {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-org {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.timeline-body p {
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}

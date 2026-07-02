@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Automated Garden — Ethan Cearlock" />
+  <title>Automated Garden · Ethan Cearlock</title>
+  <!--
+    This page is one level deeper (inside projects/) so the path
+    to css/style.css needs an extra ../ to go up one directory first.
+    ../ means "go up one folder from where this file lives."
+  -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/project-page.css" />
+</head>
+
+<body>
+
+  <aside class="sidebar">
+    <a href="../index.html" class="sidebar-logo">ethan cearlock</a>
+    <p class="sidebar-tagline">// cs · security · systems</p>
+    <nav>
+      <ul>
+        <li><a href="../index.html">home</a></li>
+        <li><a href="../projects.html" class="active">projects</a></li>
+        <li><a href="../writing.html">writing</a></li>
+        <li><a href="../experience.html">experience</a></li>
+        <li><a href="../about.html">about</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin</a>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- Breadcrumb: lets the reader know where they are -->
+    <p class="breadcrumb"><a href="../projects.html">← projects</a></p>
+
+    <div class="project-header">
+      <div class="project-tags">
+        <span class="card-tag-inline">ics</span>
+        <span class="card-tag-inline">hardware</span>
+        <span class="card-tag-inline">esp32</span>
+        <span class="card-tag-inline">ignition</span>
+      </div>
+      <h1>automated garden</h1>
+      <p class="project-subtitle">
+        A garden-scale SCADA system built on ESP32 microcontrollers and
+        Inductive Automation's Ignition platform. Designed as a hands-on
+        ICS/OT credential and a real working system to water my plants.
+      </p>
+      <a class="project-link"
+         href="https://github.com/AnotherNovice/GardenSCADA/tree/main"
+         target="_blank"
+         rel="noopener noreferrer">
+        view on github →
+      </a>
+    </div>
+
+    <!-- ===================== IMAGE GALLERY =====================
+      Add your actual images by replacing the src placeholder paths.
+      Keep images in your repo under assets/images/garden/
+      or link to raw GitHub URLs if you store them in the project repo.
+    -->
+    <div class="image-gallery">
+      <figure>
+        <img src="../assets/images/garden-placeholder.jpg"
+             alt="ESP32 sensor node mounted in the garden"
+             loading="lazy" />
+        <!--
+          alt text: describes the image for screen readers and when
+          the image fails to load. Always write something meaningful.
+          loading="lazy" defers loading until the image is near the
+          viewport — improves page load speed.
+        -->
+        <figcaption>ESP32 sensor node — placeholder caption</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/images/garden-placeholder-2.jpg"
+             alt="Ignition dashboard showing sensor readings"
+             loading="lazy" />
+        <figcaption>Ignition SCADA dashboard — placeholder caption</figcaption>
+      </figure>
+    </div>
+
+    <hr class="section-divider" />
+
+    <h2>overview</h2>
+    <p>
+      Placeholder — describe what the project is and why you built it.
+      What problem does it solve? What was the motivation?
+    </p>
+
+    <h2>stack</h2>
+    <ul class="project-list">
+      <li><code>ESP32</code> — sensor nodes, WiFi connectivity</li>
+      <li><code>Ignition</code> — SCADA platform, HMI dashboards</li>
+      <li><code>MQTT</code> — messaging protocol between sensors and platform</li>
+      <li><code>placeholder</code> — add other tools as relevant</li>
+    </ul>
+
+    <h2>what I learned</h2>
+    <p>
+      Placeholder — what did building this teach you about ICS architecture,
+      networking, the gap between IT and OT security?
+    </p>
+
+    <h2>status</h2>
+    <p class="muted">in progress — placeholder update date</p>
+
+  </main>
+
+</body>
+</html>

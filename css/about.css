@@ -1,0 +1,38 @@
+/* ============================================================
+   about.css — styles specific to about.html
+   ============================================================ */
+
+/* --- Hero: photo + intro text side by side --- */
+.about-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 8px;           /* 50% makes it a circle, changed to 8px for more square */
+  object-fit: cover;            /* crops without stretching */
+  border: 2px solid var(--border);
+  flex-shrink: 0;               /* prevents photo from squishing */
+  background: var(--bg-surface);
+}
+
+.about-intro {
+  flex: 1;
+}
+
+.about-intro h1 {
+  margin-bottom: 0.75rem;
+}
+
+/* Stack photo above text on narrow screens */
+@media (max-width: 500px) {
+  .about-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
